@@ -1,0 +1,7 @@
+[table]
+[tr][th]タイトル[/th][th]日本語化[/th][th]分類[/th][th]備考[/th][/tr]
+{% for product in products %}[tr][th][url={{ product.mod_detail_link }}] {{ product.name }}[/url][/th][th]{{ product.mod_status }}[/th][th]{{ product.mod_category }}[/th][th]{{ product.mod_description }}[/th][/tr]
+{% endfor %}
+[/table]
+
+(○：日本語化可能 / △：一部日本語化(プレイに支障有) / ×：日本語化不可 / ‐:備考参照)
