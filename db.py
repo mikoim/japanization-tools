@@ -32,7 +32,7 @@ def map_dict(rows: list, mapping: dict):
 
 def read_csv(filename=None):
     if not filename:
-        csv_file = urllib.request.urlopen(master_csv_url).read().decode().split('\r\n')
+        csv_file = urllib.request.urlopen(master_csv_url).read().decode('utf-8').split('\r\n')
     else:
         csv_file = open(filename).readlines()
 
