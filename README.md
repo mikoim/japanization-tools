@@ -13,4 +13,7 @@ python3.5 generate_files.py
 
 # Gather recommended games on Steam Group
 python3.5 gather_curation.py | tee result.txt
+
+# Gather game information on Steam Store by appid
+python3.5 appid.py 730
 ```
