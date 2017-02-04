@@ -7,6 +7,7 @@ import sys
 regex_app_id = re.compile('app/([0-9]+)/')
 
 start = 0
+total_count = 0
 
 while True:
     result = requests.get('http://steamcommunity.com/groups/japanization/ajaxgetrecommendations/render/', params={
@@ -37,3 +38,5 @@ while True:
         print('\t'.join([app_id, app_name, summary, link]))
 
     start += 5
+    if start > obj['total_count']:
+        break
