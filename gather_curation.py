@@ -21,7 +21,7 @@ while True:
 
     if not obj['success']:
         print(obj, file=sys.stderr)
-        exit()
+        exit(-1)
 
     results_html = BeautifulSoup(obj['results_html'], 'lxml')
 
