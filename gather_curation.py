@@ -37,6 +37,7 @@ while True:
 
         print('\t'.join([app_id, app_name, summary, link]))
 
-    start += 5
+    start += 10
+
     if start > obj['total_count']:
         break
