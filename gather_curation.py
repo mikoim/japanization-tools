@@ -27,12 +27,13 @@ while True:
 
     for product in results_html.find_all(class_='curation_app_block'):
         app_id = regex_app_id.search(product.find(class_='curation_app_block_content').a['href']).group(1)
-        app_name = product.find(class_='curation_app_block_name').string.strip()
+        app_name = product.find(class_='title').string.strip()
         summary = product.find(class_='curation_app_block_blurb').get_text().strip()
 
         try:
             link = product.find(class_='highlighted_recommendation_link').a['href']
-        except:
+        except Exception as e:
+            print(e, file=sys.stderr)
             link = ''
 
         print('\t'.join([app_id, app_name, summary, link]))
