@@ -1,5 +1,6 @@
 import json
 import sys
+import time
 
 import requests
 
@@ -27,6 +28,7 @@ class Store(object):
         except IOError:
             print('app_id = {:d} is not cached'.format(app_id), file=sys.stderr)
 
+        time.sleep(2)
         r = requests.get(url=url, params={'l': self.l, 'cc': self.cc, 'appids': app_id})
 
         if r.status_code != 200:
